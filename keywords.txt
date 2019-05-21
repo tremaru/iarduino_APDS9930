@@ -1,0 +1,20 @@
+#	####################################################
+#	СИНТАКСИЧЕСКАЯ РАСКРАСКА ДЛЯ БИБИЛИОТЕКИ:
+#	iarduino_APDS9930
+#	####################################################
+#	ТИПЫ ДАННЫХ:							   (KEYWORD1)
+	iarduino_APDS9930	KEYWORD1
+#	####################################################
+#	МЕТОДЫ И ФУНКЦИИ:						   (KEYWORD2)
+	begin	KEYWORD2
+	reset	KEYWORD2
+	getLight	KEYWORD2
+	getPulsation	KEYWORD2
+	getProximity	KEYWORD2
+	setCurrentDiode	KEYWORD2
+#	####################################################
+#	КОНСТАНТЫ:								   (LITERAL1)
+	APDS9930_DIODE_100	LITERAL1
+	APDS9930_DIODE_50	LITERAL1
+	APDS9930_DIODE_25	LITERAL1
+	APDS9930_DIODE_12	LITERAL1
