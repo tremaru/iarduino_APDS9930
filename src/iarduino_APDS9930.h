@@ -1,5 +1,5 @@
 //	Библиотека для работы с датчиком освещенности и приближения APDS-9930: https://iarduino.ru/shop/Sensory-Datchiki/datchik-osveschennosti-i-priblizheniya-apds-9930-trema-modul-v2-0.html
-//  Версия: 1.0.0
+//  Версия: 1.0.1
 //  Последнюю версию библиотеки Вы можете скачать по ссылке: https://iarduino.ru/file/504.html
 //  Подробное описание функции бибилиотеки доступно по ссылке: https://wiki.iarduino.ru/page/trema-APDS-9930/
 //  Библиотека является собственностью интернет магазина iarduino.ru и может свободно использоваться и распространяться!
