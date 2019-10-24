@@ -2,13 +2,16 @@
 
 # iarduino\_APDS9930
 
-Библиотека iarduino\_APDS9930 позволяет работать с [Trema датчиком освещенности и приближения APDS-9930](https://iarduino.ru/shop/Sensory-Datchiki/datchik-osveschennosti-i-priblizheniya-apds-9930-trema-modul-v2-0.html), получать освещённость, коэффициент пульсаций источника света и близость препятствий.
+**This is a library for Arduino IDE. It allows to work with [APDS-9930 Distance and Light Sensor](https://iarduino.ru/shop/Sensory-Datchiki/datchik-toka-5a-trema-modul-v2-0.html), module made by iArduino.ru**
 
-Данная библиотека может использовать как аппаратную, так и программную реализацию шины I2C.
+**Данная библиотека для Arduino IDE позволяет работать с [Trema датчиком освещенности и приближения APDS-9930](https://iarduino.ru/shop/Sensory-Datchiki/datchik-toka-5a-trema-modul-v2-0.html) от [iArduino.ru](https://iarduino.ru)**
 
-Подробное описание работы с библиотекой, находится в разделе [Wiki - Датчик освещенности и приближения APDS-9930 (Trema-модуль v2.0)](https://wiki.iarduino.ru/page/trema-APDS-9930/).
+> Подробнее про установку библиотеки читайте в нашей [инструкции](https://wiki.iarduino.ru/page/Installing_libraries/).
 
-Назначение функций:
+> Подробнее про подключение к [Arduino UNO](https://iarduino.ru/shop/boards/arduino-uno-r3.html)/[Piranha UNO](https://iarduino.ru/shop/boards/piranha-uno-r3.html) читайте на нашей [wiki](https://wiki.iarduino.ru/page/trema-APDS-9930/#h3_3)
+
+
+## Назначение функций:
 
 **Подключаем библиотеку** 
 
@@ -40,7 +43,7 @@ iarduino_APDS9930 ОБЪЕКТ; // Создаём объект для работ
 ОБЪЕКТ.getLight(); // Чтение освещённости в люксах.
 ```
 
-**Чтение коэффициента** 
+**Чтение коэффициента пульсаций** 
 
 ```C++
 ОБЪЕКТ.getPulsation(); // Чтение коэффициента пульсаций источника света в %..
