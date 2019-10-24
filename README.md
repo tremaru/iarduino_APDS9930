@@ -2,7 +2,7 @@
 
 # iarduino\_APDS9930
 
-**This is a library for Arduino IDE. It allows to work with [APDS-9930 Distance and Light Sensor](https://iarduino.ru/shop/Sensory-Datchiki/datchik-toka-5a-trema-modul-v2-0.html), module made by iArduino.ru**
+**This is a library for Arduino IDE. It allows to work with [APDS-9930 Distance and Light Sensor](https://iarduino.ru/shop/Sensory-Datchiki/datchik-osveschennosti-i-priblizheniya-apds-9930-trema-modul-v2-0.html), module made by iArduino.ru**
 
 **Данная библиотека для Arduino IDE позволяет работать с [Trema датчиком освещенности и приближения APDS-9930](https://iarduino.ru/shop/Sensory-Datchiki/datchik-toka-5a-trema-modul-v2-0.html) от [iArduino.ru](https://iarduino.ru)**
 
