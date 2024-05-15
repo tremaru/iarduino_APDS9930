@@ -1,9 +1,7 @@
 #include "iarduino_APDS9930.h"																										//
 																																	//
 //		Инициализация датчика:																										//	Возвращаемое значение: результат инициализации.
-bool	iarduino_APDS9930::begin(void){																								//	Параметр: отсутствует
-//			Инициируем работу с шиной I2C:																							//
-			obj_I2C->begin(100);																									//	Инициируем передачу данных по шине I2C на скорости 100 кГц.
+bool	iarduino_APDS9930::_begin(void){																							//	Параметр: отсутствует
 //			Ждём завершение переходных процессов по включении питания:																//
 			delay(5);																												//
 //			Задаём параметры датчика:																								//
@@ -157,7 +155,7 @@ uint16_t iarduino_APDS9930::_ADCtoLen(uint8_t pulse, uint16_t Ch1){													
 bool	iarduino_APDS9930::_writeByte(uint8_t reg, uint8_t data){																	//	Параметры:				reg - номер регистра, data - байт данных для записи.
 			bool	result=false;																									//	Определяем флаг для хранения результата записи.
 			uint8_t	sumtry=10;																										//	Определяем переменную для подсчёта количества оставшихся попыток записи.
-			do{	result = obj_I2C->writeByte(val_Addr, reg|APDS9930_BIT_ADDRESS_COMMAND|APDS9930_VAL_ADDRESS_TYPE_INC, data);		//	Записываем в регистр reg модуля val_Addr байт данных data.
+			do{	result = selI2C->writeByte(val_Addr, reg|APDS9930_BIT_ADDRESS_COMMAND|APDS9930_VAL_ADDRESS_TYPE_INC, data);			//	Записываем в регистр reg модуля val_Addr байт данных data.
 				sumtry--;	if(!result){delay(1);}																					//	Уменьшаем количество попыток записи и устанавливаем задержку при неудаче.
 			}	while		(!result && sumtry>0);																					//	Повторяем запись если она завершилась неудачей, но не более sumtry попыток.
 			delay(2);																												//	Ждём применения модулем записанных данных.
@@ -168,7 +166,7 @@ bool	iarduino_APDS9930::_writeByte(uint8_t reg, uint8_t data){																	/
 bool	iarduino_APDS9930::_readBytes(uint8_t reg, uint8_t *data, uint8_t sum){														//	Параметры:				reg - номер первого регистра, data - указатель на массив получающий данные, sum - количество читаемых байт.
 			bool	result=false;																									//	Определяем флаг для хранения результата чтения.
 			uint8_t	sumtry=10;																										//	Определяем переменную для подсчёта количества оставшихся попыток чтения.
-			do{	result = obj_I2C->readBytes(val_Addr, reg|APDS9930_BIT_ADDRESS_COMMAND|APDS9930_VAL_ADDRESS_TYPE_INC, data, sum);	//	Считываем из модуля val_Addr, начиная с регистра reg, в массив data, sum байт.
+			do{	result = selI2C->readBytes(val_Addr, reg|APDS9930_BIT_ADDRESS_COMMAND|APDS9930_VAL_ADDRESS_TYPE_INC, data, sum);	//	Считываем из модуля val_Addr, начиная с регистра reg, в массив data, sum байт.
 				sumtry--;	if(!result){delay(1);}																					//	Уменьшаем количество попыток чтения и устанавливаем задержку при неудаче.
 			}	while		(!result && sumtry>0);																					//	Повторяем чтение если оно завершилось неудачей, но не более sumtry попыток.
 			return result;																											//	Возвращаем результат чтения (true/false).
