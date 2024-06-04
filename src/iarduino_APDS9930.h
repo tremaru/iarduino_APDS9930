@@ -1,5 +1,5 @@
 //	Библиотека для работы с датчиком освещенности и приближения APDS-9930: https://iarduino.ru/shop/Sensory-Datchiki/datchik-osveschennosti-i-priblizheniya-apds-9930-trema-modul-v2-0.html
-//  Версия: 1.0.3
+//  Версия: 1.0.4
 //  Последнюю версию библиотеки Вы можете скачать по ссылке: https://iarduino.ru/file/504.html
 //  Подробное описание функции бибилиотеки доступно по ссылке: https://wiki.iarduino.ru/page/trema-APDS-9930/
 //  Библиотека является собственностью интернет магазина iarduino.ru и может свободно использоваться и распространяться!
@@ -140,10 +140,10 @@ class iarduino_APDS9930{																												//
 		}																																//
 	/**	Пользовательские функции **/																									//
 		#if defined(TwoWire_h) || defined(__ARDUINO_WIRE_IMPLEMENTATION__)																//
-		bool				begin					(TwoWire* i=&Wire ){ selI2C->begin(i); return _begin(); }							//	Определяем функцию инициализации модуля								(Параметр:  объект для работы с аппаратной шиной I2C).
+		bool				begin					(TwoWire* i=&Wire ){ selI2C->init(i); return _begin(); }							//	Определяем функцию инициализации модуля								(Параметр:  объект для работы с аппаратной шиной I2C).
 		#endif																															//
 		#if defined(iarduino_I2C_Software_h)																							//
-		bool				begin					(SoftTwoWire* i   ){ selI2C->begin(i); return _begin(); }							//	Определяем функцию инициализации модуля								(Параметр:  объект для работы с программной шиной I2C).
+		bool				begin					(SoftTwoWire* i   ){ selI2C->init(i); return _begin(); }							//	Определяем функцию инициализации модуля								(Параметр:  объект для работы с программной шиной I2C).
 		#endif																															//
 		bool				reset					(void	){ return _begin(); }														//	Определяем функцию перезагрузки чипа								(Параметр:  отсутствует).
 		uint16_t			getLight				(void	);																			//	Объявляем  функцию получения освещённости							(Параметр:  отсутствует).
