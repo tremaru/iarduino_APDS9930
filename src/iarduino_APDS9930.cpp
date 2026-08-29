@@ -133,6 +133,7 @@ bool	iarduino_APDS9930::setCurrentDiode(uint8_t current){																		//	П
 				if( val_pGain  ==  8  ){	val_Reg_8	|= APDS9930_VAL_CONTROL_PGAIN_8X;  }			// p   8X					//	Задаём коэффициент усиления при вычислении близости в значение 8x.
 				if( _writeByte( APDS9930_REG_CONTROL, val_Reg_8	) == false ){ return false; }										//	Записываем значение переменной val_Reg_8 в регистр управления.
 			}	else														{ return false; }										//	Если мощьность драйвера светодиода задана не корректно, то возвращаем ошибку.
+			return true;																											//	Возвращаем флаг успеха.
 }																																	//	
 																																	//
 //		Преобразование значений АЦП в люксы:																						//	Возвращаемое значение:	освещённость (лк).
